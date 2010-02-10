@@ -136,7 +136,7 @@ class Flora2( xsb ):
 		if var_list != []:
 			mapping = '['
 			for i in var_list:
-				mapping += "'" + i + "' = " + i + "1,"
+				mapping += "'?" + i + "' = " + i + "1,"
 				
 			
 			mapping = mapping[ :-1 ] + "]"

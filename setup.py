@@ -43,11 +43,9 @@ if __name__ == '__main__':
 	include1 = os.path.join( xsb_home, 'config', platform )
 	include2 = os.path.join( xsb_home, 'emu' )
 	xsb_obj  = os.path.join( include1, 'saved.o', 'xsb.o' )
-	
-	
-	
 
-
+	
+        sys.argv = sys.argv[ :2 ]
 
 setup(name='ReasonablePython',
 	version='0.1.2',

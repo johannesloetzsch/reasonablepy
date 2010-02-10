@@ -59,13 +59,13 @@ extern void   ctop_int(int, int);
 						/* defined in builtin.c */
 extern void   ctop_float(int, double);
 						/* def in builtin.c */
-extern void   ctop_string(int, char*);
+/*extern void   ctop_string(int, char*);*/
 						/* def in builtin.c */
-extern void   extern_ctop_string(int, char*);
+/*extern void   extern_ctop_string(int, char*);*/
 						/* def in builtin.c */
 /*extern int    ctop_abs(int, char*);*/
 
-extern char* string_find(char*, int);		/* defined in psc.c	*/
+/*extern char* string_find(char*, int);*/		/* defined in psc.c	*/
 
 /*extern int   ctop_term(char*, char*, reg_num);
 extern int   ptoc_term(char*, char*, reg_num);*/
