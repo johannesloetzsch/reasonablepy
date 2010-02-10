@@ -16,15 +16,16 @@ First thing to do, if you didn't allready, is to install:
 
 - XSB Prolog engine (http://xsb.sourceforge.net)
 - Flora2 (http://flora.sourceforge.net)
-- ZODB (http://www.zope.org/Products/StandaloneZODB)
+- ZODB (http://www.zope.org/Products/StandaloneZODB or with Debian aptitude install python-zodb)
+- python-dev
 
 After this steps first build Reasonable Python by 
 issuing:
 
-~/reasonable/python setup.py build --xsb /path/to/xsb --flora2 /path/to/flora2
+~/reasonable/python setup.py build --xsb /path/to/XSB/ --flora2 /path/to/flora2/
 
-Where /path/to/xsb is the path to yout XSB installation, 
-and /path/to/flora2 the path tou yout Flora2 installation.
+Where /path/to/XSB/ is the path to your XSB installation, 
+and /path/to/flora2/ the path tou your Flora2 installation.
 
 Additionally you can (should?) add the option:
 

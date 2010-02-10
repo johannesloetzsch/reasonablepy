@@ -138,15 +138,17 @@ Lua, MzScheme, Ocaml, Perl, PHP, Ruby, or Tcl/Tk).
 module into XSB. Additional wrapper classes were devel-
 oped to ease communication between XSB and Python, and
 FLORA-2 and Python, as shown in the following interactive
-shell session.
+shell session. This examples assumes that you are inside of 
+…/flora2/demos/ where the file flogic_basics.flr can be found
+
    >>> f = interface.Flora2()
    [FLORA2 specific output]
-   >>> f.consult( ’test’ )
+   >>> f.consult('flogic_basics')
    [FLORA2 specific output]
-   >>> f.query( ’X:person[ Y -> Z ].’, [’X’,
-   ’Y’, ’Z’] )
-   [{’Y’: ’age’, ’X’: ’mirko1’, ’Z’: ’40’},{’Y’:
-   ’age’, ’X’: ’mirko2’, ’Z’: ’42’}]
+   >>> f.query("?X:person[kids -> ?Y].", ['X','Y'])
+   [{'X': 'mary', 'Y': 'betty'},
+    {'X': 'mary', 'Y': 'leo'},
+    {'X': 'mary', 'Y': 'tim'}]
    >>> f.close_query()
 
    We can conclude that such an interface allows for using
