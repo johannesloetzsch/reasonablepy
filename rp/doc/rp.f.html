@@ -1,0 +1,442 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module rp.f</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="rp.html"><font color="#ffffff">rp</font></a>.f</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/usr/lib/python2.4/site-packages/rp/f.py">/usr/lib/python2.4/site-packages/rp/f.py</a></font></td></tr></table>
+    <p><tt>Reasonable&nbsp;Python<br>
+A&nbsp;module&nbsp;for&nbsp;integrating&nbsp;F-logic&nbsp;into&nbsp;Python<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+f.py&nbsp;---&nbsp;F-logic&nbsp;concepts&nbsp;(rule,&nbsp;query,&nbsp;fact,&nbsp;variable&nbsp;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+by&nbsp;Markus&nbsp;Schatten&nbsp;&lt;markus_dot_schatten_at_foi_dot_hr&gt;<br>
+Faculty&nbsp;of&nbsp;Organization&nbsp;and&nbsp;Informatics,<br>
+Varaždin,&nbsp;Croatia,&nbsp;2007<br>
+&nbsp;<br>
+This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or<br>
+modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public<br>
+License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either<br>
+version&nbsp;2.1&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
+&nbsp;<br>
+This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
+but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
+MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the&nbsp;GNU<br>
+Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
+&nbsp;<br>
+You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public<br>
+License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software<br>
+Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;Street,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA&nbsp;&nbsp;02110-1301&nbsp;&nbsp;USA</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="string.html">string</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="persistent.html#Persistent">persistent.Persistent</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="rp.f.html#Logical">Logical</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="rp.f.html#Bogus">Bogus</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="rp.f.html#Variable">Variable</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="rp.f.html#Construct">Construct</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="rp.f.html#Fact">Fact</a>
+</font></dt><dt><font face="helvetica, arial"><a href="rp.f.html#Query">Query</a>
+</font></dt><dt><font face="helvetica, arial"><a href="rp.f.html#Rule">Rule</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="rp.f.html#Formula">Formula</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Bogus">class <strong>Bogus</strong></a>(<a href="rp.f.html#Logical">Logical</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Bogus">Bogus</a>&nbsp;testing&nbsp;class.&nbsp;Ignore!<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="rp.f.html#Bogus">Bogus</a></dd>
+<dd><a href="rp.f.html#Logical">Logical</a></dd>
+<dd><a href="persistent.html#Persistent">persistent.Persistent</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Bogus-__init__"><strong>__init__</strong></a>(self, a<font color="#909090">=1</font>, b<font color="#909090">=[2, 3]</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="rp.f.html#Logical">Logical</a>:<br>
+<dl><dt><a name="Bogus-__and__"><strong>__and__</strong></a>(self, new)</dt></dl>
+
+<dl><dt><a name="Bogus-__fstr__"><strong>__fstr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Bogus-__or__"><strong>__or__</strong></a>(self, new)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="rp.f.html#Logical">Logical</a>:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Logical' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<hr>
+Methods inherited from <a href="persistent.html#Persistent">persistent.Persistent</a>:<br>
+<dl><dt><a name="Bogus-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Bogus-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Bogus-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#Bogus-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Bogus-__getstate__"><strong>__getstate__</strong></a>(...)</dt><dd><tt>Get&nbsp;the&nbsp;object&nbsp;serialization&nbsp;state<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;no&nbsp;assigned&nbsp;slots&nbsp;and&nbsp;has&nbsp;no&nbsp;instance&nbsp;dictionary,&nbsp;then&nbsp;<br>
+None&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;no&nbsp;assigned&nbsp;slots&nbsp;and&nbsp;has&nbsp;an&nbsp;instance&nbsp;dictionary,&nbsp;then&nbsp;<br>
+the&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;instance&nbsp;dictionary&nbsp;is&nbsp;returned.&nbsp;The&nbsp;copy&nbsp;has&nbsp;any&nbsp;items&nbsp;<br>
+with&nbsp;names&nbsp;starting&nbsp;with&nbsp;'_v_'&nbsp;or&nbsp;'_p_'&nbsp;ommitted.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;assigned&nbsp;slots,&nbsp;then&nbsp;a&nbsp;two-element&nbsp;tuple&nbsp;is&nbsp;returned.&nbsp;&nbsp;<br>
+The&nbsp;first&nbsp;element&nbsp;is&nbsp;either&nbsp;None&nbsp;or&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;instance&nbsp;dictionary,&nbsp;<br>
+as&nbsp;described&nbsp;above.&nbsp;The&nbsp;second&nbsp;element&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;items&nbsp;<br>
+for&nbsp;each&nbsp;of&nbsp;the&nbsp;assigned&nbsp;slots.</tt></dd></dl>
+
+<dl><dt><a name="Bogus-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Reduce&nbsp;an&nbsp;object&nbsp;to&nbsp;contituent&nbsp;parts&nbsp;for&nbsp;serialization</tt></dd></dl>
+
+<dl><dt><a name="Bogus-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Bogus-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Bogus-__setstate__"><strong>__setstate__</strong></a>(...)</dt><dd><tt>Set&nbsp;the&nbsp;object&nbsp;serialization&nbsp;state<br>
+&nbsp;<br>
+The&nbsp;state&nbsp;should&nbsp;be&nbsp;in&nbsp;one&nbsp;of&nbsp;3&nbsp;forms:<br>
+&nbsp;<br>
+-&nbsp;None<br>
+&nbsp;<br>
+&nbsp;&nbsp;Ignored<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;dictionary<br>
+&nbsp;<br>
+&nbsp;&nbsp;In&nbsp;this&nbsp;case,&nbsp;the&nbsp;object's&nbsp;instance&nbsp;dictionary&nbsp;will&nbsp;be&nbsp;cleared&nbsp;and&nbsp;<br>
+&nbsp;&nbsp;updated&nbsp;with&nbsp;the&nbsp;new&nbsp;state.<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;two-tuple&nbsp;with&nbsp;a&nbsp;string&nbsp;as&nbsp;the&nbsp;first&nbsp;element.&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;In&nbsp;this&nbsp;case,&nbsp;the&nbsp;method&nbsp;named&nbsp;by&nbsp;the&nbsp;string&nbsp;in&nbsp;the&nbsp;first&nbsp;element&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;called&nbsp;with&nbsp;the&nbsp;second&nbsp;element.<br>
+&nbsp;<br>
+&nbsp;&nbsp;This&nbsp;form&nbsp;supports&nbsp;migration&nbsp;of&nbsp;data&nbsp;formats.<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;two-tuple&nbsp;with&nbsp;None&nbsp;or&nbsp;a&nbsp;Dictionary&nbsp;as&nbsp;the&nbsp;first&nbsp;element&nbsp;and<br>
+&nbsp;&nbsp;with&nbsp;a&nbsp;dictionary&nbsp;as&nbsp;the&nbsp;second&nbsp;element.<br>
+&nbsp;<br>
+&nbsp;&nbsp;If&nbsp;the&nbsp;first&nbsp;element&nbsp;is&nbsp;not&nbsp;None,&nbsp;then&nbsp;the&nbsp;object's&nbsp;instance&nbsp;dictionary&nbsp;<br>
+&nbsp;&nbsp;will&nbsp;be&nbsp;cleared&nbsp;and&nbsp;updated&nbsp;with&nbsp;the&nbsp;value.<br>
+&nbsp;<br>
+&nbsp;&nbsp;The&nbsp;items&nbsp;in&nbsp;the&nbsp;second&nbsp;element&nbsp;will&nbsp;be&nbsp;assigned&nbsp;as&nbsp;attributes.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="persistent.html#Persistent">persistent.Persistent</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#Bogus-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Construct">class <strong>Construct</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Three&nbsp;possibilities&nbsp;of&nbsp;logical&nbsp;constructs:<br>
+&nbsp;<br>
+a)&nbsp;h&nbsp;:-&nbsp;b.<br>
+b)&nbsp;_&nbsp;:-&nbsp;b.<br>
+c)&nbsp;h&nbsp;:-&nbsp;_.<br>
+&nbsp;<br>
+a)&nbsp;is&nbsp;a&nbsp;rule&nbsp;where&nbsp;h&nbsp;is&nbsp;the&nbsp;head&nbsp;and&nbsp;b&nbsp;is&nbsp;the&nbsp;body&nbsp;(denoted&nbsp;by&nbsp;h&nbsp;:-&nbsp;b.&nbsp;)<br>
+b)&nbsp;is&nbsp;a&nbsp;query&nbsp;where&nbsp;b&nbsp;is&nbsp;the&nbsp;query&nbsp;body&nbsp;(denoted&nbsp;by&nbsp;?-&nbsp;b.&nbsp;)<br>
+c)&nbsp;is&nbsp;a&nbsp;fact&nbsp;which&nbsp;consists&nbsp;of&nbsp;b&nbsp;(denoted&nbsp;by&nbsp;b.&nbsp;)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Construct-__and__"><strong>__and__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct&nbsp;<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;and&nbsp;(&amp;).</tt></dd></dl>
+
+<dl><dt><a name="Construct-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initializes&nbsp;the&nbsp;logical&nbsp;construct</tt></dd></dl>
+
+<dl><dt><a name="Construct-__lshift__"><strong>__lshift__</strong></a>(self, body)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;construct.</tt></dd></dl>
+
+<dl><dt><a name="Construct-__or__"><strong>__or__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;or&nbsp;(|).</tt></dd></dl>
+
+<dl><dt><a name="Construct-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;construct</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Fact">class <strong>Fact</strong></a>(<a href="rp.f.html#Construct">Construct</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods inherited from <a href="rp.f.html#Construct">Construct</a>:<br>
+<dl><dt><a name="Fact-__and__"><strong>__and__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct&nbsp;<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;and&nbsp;(&amp;).</tt></dd></dl>
+
+<dl><dt><a name="Fact-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initializes&nbsp;the&nbsp;logical&nbsp;construct</tt></dd></dl>
+
+<dl><dt><a name="Fact-__lshift__"><strong>__lshift__</strong></a>(self, body)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;construct.</tt></dd></dl>
+
+<dl><dt><a name="Fact-__or__"><strong>__or__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;or&nbsp;(|).</tt></dd></dl>
+
+<dl><dt><a name="Fact-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;construct</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Formula">class <strong>Formula</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;used&nbsp;for&nbsp;building&nbsp;logical&nbsp;constructs.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Formula-__and__"><strong>__and__</strong></a>(self, new)</dt></dl>
+
+<dl><dt><a name="Formula-__init__"><strong>__init__</strong></a>(self, first<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Formula-__or__"><strong>__or__</strong></a>(self, new)</dt></dl>
+
+<dl><dt><a name="Formula-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Logical">class <strong>Logical</strong></a>(<a href="persistent.html#Persistent">persistent.Persistent</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;used&nbsp;for&nbsp;building&nbsp;logical&nbsp;queries.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="rp.f.html#Logical">Logical</a></dd>
+<dd><a href="persistent.html#Persistent">persistent.Persistent</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Logical-__and__"><strong>__and__</strong></a>(self, new)</dt></dl>
+
+<dl><dt><a name="Logical-__fstr__"><strong>__fstr__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Logical-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Logical-__or__"><strong>__or__</strong></a>(self, new)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Logical' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<hr>
+Methods inherited from <a href="persistent.html#Persistent">persistent.Persistent</a>:<br>
+<dl><dt><a name="Logical-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Logical-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Logical-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#Logical-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Logical-__getstate__"><strong>__getstate__</strong></a>(...)</dt><dd><tt>Get&nbsp;the&nbsp;object&nbsp;serialization&nbsp;state<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;no&nbsp;assigned&nbsp;slots&nbsp;and&nbsp;has&nbsp;no&nbsp;instance&nbsp;dictionary,&nbsp;then&nbsp;<br>
+None&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;no&nbsp;assigned&nbsp;slots&nbsp;and&nbsp;has&nbsp;an&nbsp;instance&nbsp;dictionary,&nbsp;then&nbsp;<br>
+the&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;instance&nbsp;dictionary&nbsp;is&nbsp;returned.&nbsp;The&nbsp;copy&nbsp;has&nbsp;any&nbsp;items&nbsp;<br>
+with&nbsp;names&nbsp;starting&nbsp;with&nbsp;'_v_'&nbsp;or&nbsp;'_p_'&nbsp;ommitted.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;assigned&nbsp;slots,&nbsp;then&nbsp;a&nbsp;two-element&nbsp;tuple&nbsp;is&nbsp;returned.&nbsp;&nbsp;<br>
+The&nbsp;first&nbsp;element&nbsp;is&nbsp;either&nbsp;None&nbsp;or&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;instance&nbsp;dictionary,&nbsp;<br>
+as&nbsp;described&nbsp;above.&nbsp;The&nbsp;second&nbsp;element&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;items&nbsp;<br>
+for&nbsp;each&nbsp;of&nbsp;the&nbsp;assigned&nbsp;slots.</tt></dd></dl>
+
+<dl><dt><a name="Logical-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Reduce&nbsp;an&nbsp;object&nbsp;to&nbsp;contituent&nbsp;parts&nbsp;for&nbsp;serialization</tt></dd></dl>
+
+<dl><dt><a name="Logical-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Logical-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Logical-__setstate__"><strong>__setstate__</strong></a>(...)</dt><dd><tt>Set&nbsp;the&nbsp;object&nbsp;serialization&nbsp;state<br>
+&nbsp;<br>
+The&nbsp;state&nbsp;should&nbsp;be&nbsp;in&nbsp;one&nbsp;of&nbsp;3&nbsp;forms:<br>
+&nbsp;<br>
+-&nbsp;None<br>
+&nbsp;<br>
+&nbsp;&nbsp;Ignored<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;dictionary<br>
+&nbsp;<br>
+&nbsp;&nbsp;In&nbsp;this&nbsp;case,&nbsp;the&nbsp;object's&nbsp;instance&nbsp;dictionary&nbsp;will&nbsp;be&nbsp;cleared&nbsp;and&nbsp;<br>
+&nbsp;&nbsp;updated&nbsp;with&nbsp;the&nbsp;new&nbsp;state.<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;two-tuple&nbsp;with&nbsp;a&nbsp;string&nbsp;as&nbsp;the&nbsp;first&nbsp;element.&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;In&nbsp;this&nbsp;case,&nbsp;the&nbsp;method&nbsp;named&nbsp;by&nbsp;the&nbsp;string&nbsp;in&nbsp;the&nbsp;first&nbsp;element&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;called&nbsp;with&nbsp;the&nbsp;second&nbsp;element.<br>
+&nbsp;<br>
+&nbsp;&nbsp;This&nbsp;form&nbsp;supports&nbsp;migration&nbsp;of&nbsp;data&nbsp;formats.<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;two-tuple&nbsp;with&nbsp;None&nbsp;or&nbsp;a&nbsp;Dictionary&nbsp;as&nbsp;the&nbsp;first&nbsp;element&nbsp;and<br>
+&nbsp;&nbsp;with&nbsp;a&nbsp;dictionary&nbsp;as&nbsp;the&nbsp;second&nbsp;element.<br>
+&nbsp;<br>
+&nbsp;&nbsp;If&nbsp;the&nbsp;first&nbsp;element&nbsp;is&nbsp;not&nbsp;None,&nbsp;then&nbsp;the&nbsp;object's&nbsp;instance&nbsp;dictionary&nbsp;<br>
+&nbsp;&nbsp;will&nbsp;be&nbsp;cleared&nbsp;and&nbsp;updated&nbsp;with&nbsp;the&nbsp;value.<br>
+&nbsp;<br>
+&nbsp;&nbsp;The&nbsp;items&nbsp;in&nbsp;the&nbsp;second&nbsp;element&nbsp;will&nbsp;be&nbsp;assigned&nbsp;as&nbsp;attributes.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="persistent.html#Persistent">persistent.Persistent</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#Logical-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Query">class <strong>Query</strong></a>(<a href="rp.f.html#Construct">Construct</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods inherited from <a href="rp.f.html#Construct">Construct</a>:<br>
+<dl><dt><a name="Query-__and__"><strong>__and__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct&nbsp;<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;and&nbsp;(&amp;).</tt></dd></dl>
+
+<dl><dt><a name="Query-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initializes&nbsp;the&nbsp;logical&nbsp;construct</tt></dd></dl>
+
+<dl><dt><a name="Query-__lshift__"><strong>__lshift__</strong></a>(self, body)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;construct.</tt></dd></dl>
+
+<dl><dt><a name="Query-__or__"><strong>__or__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;or&nbsp;(|).</tt></dd></dl>
+
+<dl><dt><a name="Query-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;construct</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Rule">class <strong>Rule</strong></a>(<a href="rp.f.html#Construct">Construct</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods inherited from <a href="rp.f.html#Construct">Construct</a>:<br>
+<dl><dt><a name="Rule-__and__"><strong>__and__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct&nbsp;<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;and&nbsp;(&amp;).</tt></dd></dl>
+
+<dl><dt><a name="Rule-__init__"><strong>__init__</strong></a>(self)</dt><dd><tt>Initializes&nbsp;the&nbsp;logical&nbsp;construct</tt></dd></dl>
+
+<dl><dt><a name="Rule-__lshift__"><strong>__lshift__</strong></a>(self, body)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;body&nbsp;of&nbsp;the&nbsp;construct.</tt></dd></dl>
+
+<dl><dt><a name="Rule-__or__"><strong>__or__</strong></a>(self, new)</dt><dd><tt>Adds&nbsp;a&nbsp;formula&nbsp;to&nbsp;the&nbsp;head&nbsp;of&nbsp;the&nbsp;construct<br>
+using&nbsp;the&nbsp;logic&nbsp;operator&nbsp;or&nbsp;(|).</tt></dd></dl>
+
+<dl><dt><a name="Rule-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Prints&nbsp;the&nbsp;construct</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Variable">class <strong>Variable</strong></a>(<a href="persistent.html#Persistent">persistent.Persistent</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Implementation&nbsp;of&nbsp;logical&nbsp;variables&nbsp;in&nbsp;Python.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="rp.f.html#Variable">Variable</a></dd>
+<dd><a href="persistent.html#Persistent">persistent.Persistent</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Variable-__eq__"><strong>__eq__</strong></a>(self, value)</dt></dl>
+
+<dl><dt><a name="Variable-__init__"><strong>__init__</strong></a>(self, name)</dt></dl>
+
+<dl><dt><a name="Variable-__str__"><strong>__str__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Variable-bind"><strong>bind</strong></a>(self, value)</dt></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__dict__</strong> = &lt;dictproxy object&gt;<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dl>
+
+<dl><dt><strong>__weakref__</strong> = &lt;attribute '__weakref__' of 'Variable' objects&gt;<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dl>
+
+<hr>
+Methods inherited from <a href="persistent.html#Persistent">persistent.Persistent</a>:<br>
+<dl><dt><a name="Variable-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Variable-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Variable-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#Variable-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="Variable-__getstate__"><strong>__getstate__</strong></a>(...)</dt><dd><tt>Get&nbsp;the&nbsp;object&nbsp;serialization&nbsp;state<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;no&nbsp;assigned&nbsp;slots&nbsp;and&nbsp;has&nbsp;no&nbsp;instance&nbsp;dictionary,&nbsp;then&nbsp;<br>
+None&nbsp;is&nbsp;returned.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;no&nbsp;assigned&nbsp;slots&nbsp;and&nbsp;has&nbsp;an&nbsp;instance&nbsp;dictionary,&nbsp;then&nbsp;<br>
+the&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;instance&nbsp;dictionary&nbsp;is&nbsp;returned.&nbsp;The&nbsp;copy&nbsp;has&nbsp;any&nbsp;items&nbsp;<br>
+with&nbsp;names&nbsp;starting&nbsp;with&nbsp;'_v_'&nbsp;or&nbsp;'_p_'&nbsp;ommitted.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;object&nbsp;has&nbsp;assigned&nbsp;slots,&nbsp;then&nbsp;a&nbsp;two-element&nbsp;tuple&nbsp;is&nbsp;returned.&nbsp;&nbsp;<br>
+The&nbsp;first&nbsp;element&nbsp;is&nbsp;either&nbsp;None&nbsp;or&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;instance&nbsp;dictionary,&nbsp;<br>
+as&nbsp;described&nbsp;above.&nbsp;The&nbsp;second&nbsp;element&nbsp;is&nbsp;a&nbsp;dictionary&nbsp;with&nbsp;items&nbsp;<br>
+for&nbsp;each&nbsp;of&nbsp;the&nbsp;assigned&nbsp;slots.</tt></dd></dl>
+
+<dl><dt><a name="Variable-__reduce__"><strong>__reduce__</strong></a>(...)</dt><dd><tt>Reduce&nbsp;an&nbsp;object&nbsp;to&nbsp;contituent&nbsp;parts&nbsp;for&nbsp;serialization</tt></dd></dl>
+
+<dl><dt><a name="Variable-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#Variable-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="Variable-__setstate__"><strong>__setstate__</strong></a>(...)</dt><dd><tt>Set&nbsp;the&nbsp;object&nbsp;serialization&nbsp;state<br>
+&nbsp;<br>
+The&nbsp;state&nbsp;should&nbsp;be&nbsp;in&nbsp;one&nbsp;of&nbsp;3&nbsp;forms:<br>
+&nbsp;<br>
+-&nbsp;None<br>
+&nbsp;<br>
+&nbsp;&nbsp;Ignored<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;dictionary<br>
+&nbsp;<br>
+&nbsp;&nbsp;In&nbsp;this&nbsp;case,&nbsp;the&nbsp;object's&nbsp;instance&nbsp;dictionary&nbsp;will&nbsp;be&nbsp;cleared&nbsp;and&nbsp;<br>
+&nbsp;&nbsp;updated&nbsp;with&nbsp;the&nbsp;new&nbsp;state.<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;two-tuple&nbsp;with&nbsp;a&nbsp;string&nbsp;as&nbsp;the&nbsp;first&nbsp;element.&nbsp;<br>
+&nbsp;<br>
+&nbsp;&nbsp;In&nbsp;this&nbsp;case,&nbsp;the&nbsp;method&nbsp;named&nbsp;by&nbsp;the&nbsp;string&nbsp;in&nbsp;the&nbsp;first&nbsp;element&nbsp;will&nbsp;be<br>
+&nbsp;&nbsp;called&nbsp;with&nbsp;the&nbsp;second&nbsp;element.<br>
+&nbsp;<br>
+&nbsp;&nbsp;This&nbsp;form&nbsp;supports&nbsp;migration&nbsp;of&nbsp;data&nbsp;formats.<br>
+&nbsp;<br>
+-&nbsp;A&nbsp;two-tuple&nbsp;with&nbsp;None&nbsp;or&nbsp;a&nbsp;Dictionary&nbsp;as&nbsp;the&nbsp;first&nbsp;element&nbsp;and<br>
+&nbsp;&nbsp;with&nbsp;a&nbsp;dictionary&nbsp;as&nbsp;the&nbsp;second&nbsp;element.<br>
+&nbsp;<br>
+&nbsp;&nbsp;If&nbsp;the&nbsp;first&nbsp;element&nbsp;is&nbsp;not&nbsp;None,&nbsp;then&nbsp;the&nbsp;object's&nbsp;instance&nbsp;dictionary&nbsp;<br>
+&nbsp;&nbsp;will&nbsp;be&nbsp;cleared&nbsp;and&nbsp;updated&nbsp;with&nbsp;the&nbsp;value.<br>
+&nbsp;<br>
+&nbsp;&nbsp;The&nbsp;items&nbsp;in&nbsp;the&nbsp;second&nbsp;element&nbsp;will&nbsp;be&nbsp;assigned&nbsp;as&nbsp;attributes.</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="persistent.html#Persistent">persistent.Persistent</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object&gt;<dd><tt>T.<a href="#Variable-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;type&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

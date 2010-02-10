@@ -1,0 +1,45 @@
+--------------------------------------------------
+      Reasonable Python - INSTALLATION
+--------------------------------------------------
+
+CAUTION: Reasonable Python was only tested on kubuntu 
+linux (using XSB and Flora2). If you manage to get it 
+to work on another platform please let me know, I'll
+be pleased to add your solution to the project.
+
+Installation should be performed in the following way.
+Since you are reading this document I assume you 
+allready untared the Reasonable Python tar archive to
+a folder, say ~/reasonable.
+
+First thing to do, if you didn't allready, is to install:
+
+- XSB Prolog engine (http://xsb.sourceforge.net)
+- Flora2 (http://flora.sourceforge.net)
+- ZODB (http://www.zope.org/Products/StandaloneZODB)
+
+After this steps first build Reasonable Python by 
+issuing:
+
+~/reasonable/python setup.py build --xsb /path/to/xsb --flora2 /path/to/flora2
+
+Where /path/to/xsb is the path to yout XSB installation, 
+and /path/to/flora2 the path tou yout Flora2 installation.
+
+Additionally you can (should?) add the option:
+
+--platform your-platform
+
+Where your-platform is the platform specified in the 
+path/to/xsb/config directory.
+
+If build doesn't complain about any errors issue as
+superuser:
+
+python setup.py install
+
+If nothing went wrong you should be able to use
+Reasonable Python within your python installation
+now.
+
+--------------------------------------------------

@@ -1,0 +1,95 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module rp.dbms</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="rp.html"><font color="#ffffff">rp</font></a>.dbms</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/usr/lib/python2.4/site-packages/rp/dbms.py">/usr/lib/python2.4/site-packages/rp/dbms.py</a></font></td></tr></table>
+    <p><tt>Reasonable&nbsp;Python<br>
+A&nbsp;module&nbsp;for&nbsp;integrating&nbsp;F-logic&nbsp;into&nbsp;Python<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+dbms.py&nbsp;---&nbsp;easy&nbsp;interface&nbsp;to&nbsp;ZODB<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+by&nbsp;Markus&nbsp;Schatten&nbsp;&lt;markus_dot_schatten_at_foi_dot_hr&gt;<br>
+Faculty&nbsp;of&nbsp;Organization&nbsp;and&nbsp;Informatics,<br>
+Varaždin,&nbsp;Croatia,&nbsp;2007<br>
+&nbsp;<br>
+This&nbsp;library&nbsp;is&nbsp;free&nbsp;software;&nbsp;you&nbsp;can&nbsp;redistribute&nbsp;it&nbsp;and/or<br>
+modify&nbsp;it&nbsp;under&nbsp;the&nbsp;terms&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public<br>
+License&nbsp;as&nbsp;published&nbsp;by&nbsp;the&nbsp;Free&nbsp;Software&nbsp;Foundation;&nbsp;either<br>
+version&nbsp;2.1&nbsp;of&nbsp;the&nbsp;License,&nbsp;or&nbsp;(at&nbsp;your&nbsp;option)&nbsp;any&nbsp;later&nbsp;version.<br>
+&nbsp;<br>
+This&nbsp;library&nbsp;is&nbsp;distributed&nbsp;in&nbsp;the&nbsp;hope&nbsp;that&nbsp;it&nbsp;will&nbsp;be&nbsp;useful,<br>
+but&nbsp;WITHOUT&nbsp;ANY&nbsp;WARRANTY;&nbsp;without&nbsp;even&nbsp;the&nbsp;implied&nbsp;warranty&nbsp;of<br>
+MERCHANTABILITY&nbsp;or&nbsp;FITNESS&nbsp;FOR&nbsp;A&nbsp;PARTICULAR&nbsp;PURPOSE.&nbsp;&nbsp;See&nbsp;the&nbsp;GNU<br>
+Lesser&nbsp;General&nbsp;Public&nbsp;License&nbsp;for&nbsp;more&nbsp;details.<br>
+&nbsp;<br>
+You&nbsp;should&nbsp;have&nbsp;received&nbsp;a&nbsp;copy&nbsp;of&nbsp;the&nbsp;GNU&nbsp;Lesser&nbsp;General&nbsp;Public<br>
+License&nbsp;along&nbsp;with&nbsp;this&nbsp;library;&nbsp;if&nbsp;not,&nbsp;write&nbsp;to&nbsp;the&nbsp;Free&nbsp;Software<br>
+Foundation,&nbsp;Inc.,&nbsp;51&nbsp;Franklin&nbsp;Street,&nbsp;Fifth&nbsp;Floor,&nbsp;Boston,&nbsp;MA&nbsp;&nbsp;02110-1301&nbsp;&nbsp;USA</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ZODB.html">ZODB</a><br>
+</td><td width="25%" valign=top><a href="transaction.html">transaction</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="rp.dbms.html#Objectbase">Objectbase</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Objectbase">class <strong>Objectbase</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Class&nbsp;<a href="#Objectbase">Objectbase</a>&nbsp;-&nbsp;interface&nbsp;to&nbsp;an&nbsp;object&nbsp;database<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Objectbase-__init__"><strong>__init__</strong></a>(self, dbfile<font color="#909090">=None</font>)</dt><dd><tt>Initializes&nbsp;the&nbsp;connection&nbsp;to&nbsp;the&nbsp;database&nbsp;located&nbsp;in&nbsp;'dbfile'.&nbsp;If&nbsp;<br>
+'dbfile'&nbsp;not&nbsp;supplied,&nbsp;only&nbsp;initalizes&nbsp;and&nbsp;sets&nbsp;opened&nbsp;to&nbsp;False.&nbsp;If&nbsp;<br>
+database&nbsp;does&nbsp;not&nbsp;exist,&nbsp;creates&nbsp;a&nbsp;new&nbsp;one&nbsp;with&nbsp;the&nbsp;name&nbsp;'dbfile'</tt></dd></dl>
+
+<dl><dt><a name="Objectbase-close"><strong>close</strong></a>(self)</dt><dd><tt>Closes&nbsp;the&nbsp;database.</tt></dd></dl>
+
+<dl><dt><a name="Objectbase-delete"><strong>delete</strong></a>(self, name, cascade<font color="#909090">=False</font>)</dt><dd><tt>Deletes&nbsp;an&nbsp;object&nbsp;from&nbsp;the&nbsp;database&nbsp;by&nbsp;it's&nbsp;key&nbsp;(name).&nbsp;If&nbsp;database&nbsp;<br>
+doesn't&nbsp;contain&nbsp;such&nbsp;an&nbsp;object&nbsp;raises&nbsp;ValueError.&nbsp;Parameter&nbsp;cascade&nbsp;is<br>
+used&nbsp;(if&nbsp;True)&nbsp;to&nbsp;delete&nbsp;all&nbsp;relations&nbsp;of&nbsp;this&nbsp;object&nbsp;in&nbsp;other&nbsp;objects.<br>
+Cascade&nbsp;option&nbsp;is&nbsp;not&nbsp;well&nbsp;implemented&nbsp;since&nbsp;it&nbsp;does&nbsp;not&nbsp;roll&nbsp;back&nbsp;the&nbsp;<br>
+transaction&nbsp;if&nbsp;somewhere&nbsp;in&nbsp;the&nbsp;process&nbsp;an&nbsp;error&nbsp;is&nbsp;raised&nbsp;(e.g.&nbsp;if<br>
+a&nbsp;'1'&nbsp;side&nbsp;of&nbsp;a&nbsp;1:1&nbsp;or&nbsp;1:N&nbsp;relation&nbsp;is&nbsp;being&nbsp;tried&nbsp;to&nbsp;remove).&nbsp;Use&nbsp;it&nbsp;only<br>
+if&nbsp;the&nbsp;object&nbsp;you&nbsp;try&nbsp;to&nbsp;remove&nbsp;does&nbsp;not&nbsp;engage&nbsp;1:1&nbsp;relations&nbsp;or&nbsp;is&nbsp;the&nbsp;<br>
+'1'&nbsp;side&nbsp;of&nbsp;a&nbsp;1:N&nbsp;relation.</tt></dd></dl>
+
+<dl><dt><a name="Objectbase-insert"><strong>insert</strong></a>(self, name, object)</dt><dd><tt>Inserts&nbsp;a&nbsp;new&nbsp;object&nbsp;with&nbsp;the&nbsp;key&nbsp;'name'&nbsp;to&nbsp;the&nbsp;database.</tt></dd></dl>
+
+<dl><dt><a name="Objectbase-open"><strong>open</strong></a>(self, dbfile)</dt><dd><tt>Opens&nbsp;a&nbsp;database&nbsp;stored&nbsp;in&nbsp;'dbfile'&nbsp;or&nbsp;creates&nbsp;a&nbsp;new&nbsp;one.</tt></dd></dl>
+
+<dl><dt><a name="Objectbase-selectByName"><strong>selectByName</strong></a>(self, name)</dt><dd><tt>Returns&nbsp;the&nbsp;object&nbsp;with&nbsp;the&nbsp;key&nbsp;name.&nbsp;If&nbsp;database&nbsp;doesn't&nbsp;contain&nbsp;such&nbsp;an<br>
+object&nbsp;raises&nbsp;ValueError</tt></dd></dl>
+
+<dl><dt><a name="Objectbase-selectByType"><strong>selectByType</strong></a>(self, typ)</dt><dd><tt>Searches&nbsp;the&nbsp;database&nbsp;for&nbsp;a&nbsp;given&nbsp;type&nbsp;and&nbsp;returns&nbsp;a&nbsp;dictionary&nbsp;with<br>
+key:object&nbsp;pairs&nbsp;which&nbsp;match&nbsp;this&nbsp;type.&nbsp;If&nbsp;database&nbsp;doesn't&nbsp;contain&nbsp;any<br>
+object&nbsp;of&nbsp;the&nbsp;given&nbsp;type,&nbsp;returns&nbsp;an&nbsp;empty&nbsp;dictionary.</tt></dd></dl>
+
+<dl><dt><a name="Objectbase-update"><strong>update</strong></a>(self, name, object)</dt><dd><tt>Updates&nbsp;the&nbsp;object&nbsp;with&nbsp;the&nbsp;key&nbsp;'name'&nbsp;to&nbsp;match&nbsp;the&nbsp;value&nbsp;of&nbsp;'object'.&nbsp;If<br>
+database&nbsp;doesn't&nbsp;contain&nbsp;such&nbsp;an&nbsp;object&nbsp;raises&nbsp;ValueError.&nbsp;It&nbsp;also&nbsp;raises<br>
+a&nbsp;ValueError&nbsp;if&nbsp;the&nbsp;object&nbsp;is&nbsp;not&nbsp;a&nbsp;subclass&nbsp;of&nbsp;the&nbsp;original&nbsp;object&nbsp;in&nbsp;the<br>
+database.</tt></dd></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

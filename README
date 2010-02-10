@@ -1,0 +1,270 @@
+--------------------------------------------------------
+           Reasonable Python - README
+--------------------------------------------------------
+
+Reasonable Python is a module which adds F-Logic to Python.
+This is an initial package and is still pretty unstable.
+Any bug repport is very appriciated.
+
+Here some introduction on how to use the package (it's a
+copy/paste from a paper I wrote, but some basic information
+is included). I'll try to write an easy to understand tutorial
+as soon as possible.
+
+To import Reasonable Python use:
+
+   >>> from rp import *
+
+   Most important logic programming concepts to introduce
+into Python addressed here are logic variables, facts, rules and
+queries. In FLORA-2 logic variables are denoted by any word
+starting with an uppercase letter or the underscore (’_’). A
+similar way is used in Python, by creating a class of objects
+named Variable which behavior is shown in the following
+Python interactive shell session.
+
+   >>> X = f.Variable( ’X’ )
+   >>> X
+   <f.Variable instance at 0xb7dd854c>
+   >>> print X
+   X
+   >>> X == 27
+   >>> print X
+   X = 27
+
+   When analyzing facts, rules and queries we can conclude
+that they are all instances of a construct which has the form:
+
+                         Head : −Body.                      (1)
+
+                            : −Body.                        (2)
+
+                           Head : − .                       (3)
+
+   (1) is a rule where Head is the rule head, and Body is
+the rule body (denoted by Head :- Body.). (2) is a query
+where Body is the query string (denoted by ?- Body.). (3)
+is a fact where Head is the actual fact (denoted by Head.).
+We can conclude that we need only one class when introducing
+these concepts into Python which behavior is shown in the
+following interactive shell session (where Bogus is a logical
+class as argued further).
+
+   >>> x = f.Construct()
+   >>> print x
+   >>> h, b1, b2 = f.Bogus(), f.Bogus(),
+   f.Bogus()
+   >>> x & h
+   >>> x.__class__
+   <class f.Fact at 0xb7ae356c>
+   >>> del x
+   >>> x = f.Construct()
+   >>> x << b1 & b2
+   >>> x.__class__
+   <class f.Query at 0xb7ae365c>
+   >>> del x
+   >>> x = f.Construct()
+   >>> ( x & h ) << b1 | b2
+   >>> x.__class__
+   <class f.Rule at 0xb7ac5dac>
+
+
+   One can see that x which is an instance of the Construct
+class dynamically changes its class to Fact, Rule or Query
+according to its content (e. g. its head and body). The bitwise
+shift (’<<’), the bitwise or (’|’) and the bitwise and (’&’) were
+overridden in order to allow logic programming constructs,
+and stand for ’:-’, ’;’ and ’,’ respectively. This means that
+a logic programming construct like:
+
+                          X :− (Y , Z) ; W.                     (4)
+
+   in Python would be written like:
+
+                         X << (Y & Z) | W.                        (5)
+
+   Which is similar to both FLORA-2 and Python syntax. In
+addition to these two classes some additional classes were
+deﬁned to ease such behavior.
+
+
+   Another task to be accomplished is the translation of Python
+objects into F-molecules in FLORA-2 syntax in order to allow
+reasoning about them. Python has a feature which eases this
+translation and can be seen in the following interactive shell
+session.
+
+   >>> class a:
+   ... def __init__ ( self, b1 = 1, b2 = 2 ):
+   ...       self.b1 = b1
+   ...       self.b2 = b2
+   ...
+   >>> y = a()
+   >>> dir( y )
+   [’__doc__’, '__init__’, ’__module__’, ’b1’, ’b2’]
+   >>> y. dict
+   ’b1’: 1, ’b2’: 2
+   >>> y.__class__
+   <class main .a at 0xb7a27b9c>
+
+   We can conclude that Python objects allow us to query their
+internal structure and content. Using this feature a multiple
+recursive algorithm was developed which translates Python
+objects into FLORA-2 F-molecules. For example the y object
+from the example when translated into FLORA-2 would be:
+
+   >>> tr = py2f.py2f()
+   >>> tr.f2obj( y )
+   ’py0xb7db4e2cpyobj____main__py__ :
+   pyapyclass____main__py__ ["b1"->1, "b2"->2]’
+
+   To have unique object names in our knowledge base we
+use the objects internal memory addresses and some additional
+information about its module. When an object is translated it is
+automatically stored in a ZOBD object base for later retrieval
+and permanent storage. Python objects which are not logical
+constructs as argued earlier, are considered to be facts.
+
+   In order to use the FLORA-2 engine from Python an
+interface had to be developed. FLORA-2 is build upon the
+OpenSource XSB Prolog engine which is developed in C
+and thus has a C interface [8]. The Simpliﬁed Wrapper and
+Interface Generator (SWIG) was used to create an interface
+between XSB and Python (but could be easily extended to
+any other language supported by SWIG i. e. AllegroCL, C# -
+Mono, C# - MS .NET, CFFI, CHICKEN, CLISP, Guile, Java,
+Lua, MzScheme, Ocaml, Perl, PHP, Ruby, or Tcl/Tk).
+   Through such an interface FLORA-2 is then loaded as a
+module into XSB. Additional wrapper classes were devel-
+oped to ease communication between XSB and Python, and
+FLORA-2 and Python, as shown in the following interactive
+shell session.
+   >>> f = interface.Flora2()
+   [FLORA2 specific output]
+   >>> f.consult( ’test’ )
+   [FLORA2 specific output]
+   >>> f.query( ’X:person[ Y -> Z ].’, [’X’,
+   ’Y’, ’Z’] )
+   [{’Y’: ’age’, ’X’: ’mirko1’, ’Z’: ’40’},{’Y’:
+   ’age’, ’X’: ’mirko2’, ’Z’: ’42’}]
+   >>> f.close_query()
+
+   We can conclude that such an interface allows for using
+XSB and FLORA-2 engines from Python. Compiling and
+loading of Prolog and FLORA-2 speciﬁc programs is also
+supported. Queries can be issued directly whereas return
+variables have to be provided in a Python list as the second
+argument. The results of queries are Python lists which ele-
+ments are Python dictionaries where each dictionary represents
+one solution. Keys of each dictionary are the provided return
+variables, and the matching values are the returned values from
+the knowledge base.
+
+
+   After describing the particular parts of this integration
+it is possible to connect all together in order to facilitate
+logic programming in Python. All previously described parts
+constitute a Python module. In addition to theses parts a new
+class was deﬁned which integrates them. In particular this class
+represents an F-Logic base with storing and querying facilities.
+   Any object to be stored in to the knowledge base is ﬁrst
+stored in the ZODB in order to be persistent. Afterwards it is
+translated into FLORA-2 syntax and loaded into the FLORA-2
+engine. Additionally the FLORA-2 code is saved in an external
+ﬁle so the state can be restored later. This behavior of the
+system is transparent to the Python programmer.
+   To query the knowledge base one can either use FLORA-2
+syntax or create special query objects using logical variables
+and logical constructs. In the following interactive shell session
+we ﬁrst create a construct and deﬁne a logical class which we
+will use for querying the knowledge base.
+   >>> x = Construct()
+   >>> class query object( Logical ):
+   ... def init ( self, a, b ):
+   ...       Logical.__init__( self )
+   ...       self.a = a
+   ...       self.b = b
+
+   Now we can create a query object and modify it to ﬁt our
+needs. Note how it is possible to use a logical object to query
+for any object of any class by overriding its type and class
+type attributes with logical variables. We can also override the
+names of attributes by inserting a logical variable in the place
+of the attributes name.
+
+   >>> q = query_object( Variable( ’X’ ),
+   Variable( ’Y’ ) )
+   >>> x << q
+   >>> print x
+   ?- py0xb7d6cdacpyobj____main__py__ :
+   pyquery__objectpyclass__main__py__ [
+   "b"->Y, "a"->X].
+   >>> q.__type__ = Variable( ’Z’ )
+   >>> print x
+   ?- Z : pyquery__objectpyclass__main__py__ [
+   "b"->Y, "a"->X].
+   >>> q.__classtype__ = Variable( ’W’ )
+   >>> print x
+   ?- Z:W[ "b"->Y, "a"->X].
+   >>> q.__dict__[ Variable( ’V’ ) ] = q.__dict__[
+   ’a’ ]
+   >>> del q.__dict__[ ’a’ ]
+   >>> print x
+   ?- Z:W[ "b"->Y, V->X].
+   >>> del q.__dict__[ ’b’ ]
+   >>> print x
+   ?- Z:W[ V->X ].
+
+   To query the knowledge base some facts and/or rules have
+to be stored in it. A simple data object class which subclasses
+the Persistent class is created in the following.
+   The subclassing allows all instances of the class to be stored
+in the ZODB. Instances to be stored in the knowledge base
+are also created in this interactive shell session.
+   >>> class data object( Persistent ):
+   ... def init ( self, a, b ):
+   ...      self.a = a
+   ...      self.b = b
+   ...
+   >>> d1 = data object( 1, 2 )
+   >>> d2 = data object( 3, 4 )
+
+   Now it is possible to create the knowledge base which is
+just an Python object like any other and insert the data objects.
+
+   >>> fb = FBase( ’my flbase’ )
+   [FLORA-2 specific output]
+   >>> fb.insert( d1 )
+   [FLORA-2 specific output]
+   >>> fb.insert( d2 )
+   [FLORA-2 specific output]
+
+   By using the previously created query object the following
+results are obtained. Note that the W variable returned the
+string ’class’ which is due to the impossibility of ZODB to
+store class objects (e. g. they are not persistent).
+
+   >>> fb.query( x )
+   [{’X’: ’1’, ’Z’: < main .data object
+object at 0xb7dde96c>, ’W’: ’class’},
+{’X’: ’2’, ’Z’: < main .data object object
+at 0xb7dde96c>, ’W’: ’class’}, {’X’:
+’3’, ’Z’: < main .data object object at
+0xb7c52aac>, ’W’: ’class’}, {’X’: ’4’, ’Z’:
+< main .data object object at 0xb7c52aac>,
+’W’: ’class’}]
+
+   This simple example shows how transparent the knowledge
+base is to a Python programmer. The programmer just has
+to create an FBase object to store Python objects in the
+knowledgde base.
+   To query the knowledge base query objects have to be
+created. Using logic objects and logical variables this task is
+intuitive and fair easy to accomplish.
+
+   To add rules to the knowledge base one has to use constructs
+in order to create them and store them. These rules are similar
+to their Prolog and FLORA-2 counterparts with some minor
+syntax differences still preserving the ﬂexibility of normal
+Python code.
+
