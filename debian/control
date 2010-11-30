@@ -1,0 +1,18 @@
+Source: reasonablepy
+Section: unknown
+Priority: extra
+Maintainer: Johannes Lötzsch <deb_donotspam@johannesloetzsch.de>
+Build-Depends: debhelper (>=7.0.50~), python-support (>= 0.6), cdbs (>= 0.4.49), python-all-dev, flora2
+Standards-Version: 3.8.4
+Homepage: http://reasonablepy.sf.net/
+Vcs-Git: https://github.com/johannesloetzsch/reasonablepy.git
+Vcs-Browser: https://github.com/johannesloetzsch/reasonablepy
+#XS-Python-Version: >=2.4
+
+#XB-Python-Version: ${python:Versions}
+Package: reasonablepy
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, flora2, python-zodb
+Suggests: ipython
+Description: reasonablePy adds F-Logic to Python
+ Reasonable Python is a module which adds F-Logic to Python.
